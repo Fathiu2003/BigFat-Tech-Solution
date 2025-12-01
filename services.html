@@ -1,0 +1,233 @@
+<!DOCTYPE html>
+<html lang="en">
+
+<head>
+    <meta charset="UTF-8">
+    <meta name="viewport" content="width=device-width, initial-scale=1.0">
+    <title>Services — BigFat Tech Solution</title>
+
+    <!-- Tailwind CDN -->
+    <script src="https://cdn.tailwindcss.com"></script>
+
+    <!-- AOS Animation -->
+    <link href="https://unpkg.com/aos@2.3.1/dist/aos.css" rel="stylesheet">
+
+    <style>
+        body {
+            background: #0e0e10;
+            color: #fff;
+        }
+
+        .glass {
+            backdrop-filter: blur(15px);
+            background: rgba(255, 255, 255, 0.1);
+            border: 1px solid rgba(255, 255, 255, 0.15);
+        }
+
+        .gradient-text {
+            background: linear-gradient(90deg, #00eaff, #0077ff);
+            -webkit-background-clip: text;
+            -webkit-text-fill-color: transparent;
+        }
+
+        .modal {
+            display: none;
+        }
+    </style>
+</head>
+
+<body>
+
+    <!-- NAVBAR -->
+    <header class="fixed top-0 left-0 w-full glass z-50">
+        <div class="max-w-7xl mx-auto flex justify-between items-center py-4 px-6">
+            <h1 class="text-2xl font-bold gradient-text">BigFat Tech Solution</h1>
+
+            <nav class="space-x-8 text-gray-300 text-sm hidden md:block">
+                <a href="index.html" class="hover:text-white">Home</a>
+                <a href="about.html" class="hover:text-white">About</a>
+                <a href="services.html" class="hover:text-white">Services</a>
+                <a href="portfolio.html" class="hover:text-white">Portfolio</a>
+                <a href="contact.html" class="hover:text-white">Contact</a>
+            </nav>
+        </div>
+    </header>
+
+    <!-- HERO -->
+    <section class="pt-40 pb-20 text-center px-6">
+        <h1 class="text-5xl md:text-6xl font-extrabold gradient-text" data-aos="fade-up">
+            Our Premium Services
+        </h1>
+        <p class="mt-6 text-gray-300 max-w-3xl mx-auto text-lg" data-aos="fade-up" data-aos-delay="200">
+            Explore our world-class solutions designed to transform brands and scale businesses.
+        </p>
+    </section>
+
+    <!-- SERVICES GRID -->
+    <section class="max-w-7xl mx-auto px-6 pb-20 grid md:grid-cols-3 gap-10">
+
+        <!-- SERVICE CARD TEMPLATE -->
+        <!-- EACH CARD JUST NEEDS A data-service VALUE -->
+
+        <div class="glass p-8 rounded-3xl cursor-pointer hover:scale-105 duration-300"
+            data-aos="fade-up" data-service="web-dev">
+            <h3 class="text-xl font-bold mb-3">Web Development</h3>
+            <p class="text-gray-300">Stunning, high-speed, world-class websites built for results.</p>
+        </div>
+
+        <div class="glass p-8 rounded-3xl cursor-pointer hover:scale-105 duration-300"
+            data-aos="fade-up" data-aos-delay="150" data-service="branding">
+            <h3 class="text-xl font-bold mb-3">Brand Identity & UI/UX</h3>
+            <p class="text-gray-300">Premium visuals that define your brand’s voice.</p>
+        </div>
+
+        <div class="glass p-8 rounded-3xl cursor-pointer hover:scale-105 duration-300"
+            data-aos="fade-up" data-aos-delay="300" data-service="mobile-app">
+            <h3 class="text-xl font-bold mb-3">Mobile App Development</h3>
+            <p class="text-gray-300">Powerful, smooth apps that users love.</p>
+        </div>
+
+        <div class="glass p-8 rounded-3xl cursor-pointer hover:scale-105 duration-300"
+            data-aos="fade-up" data-service="marketing">
+            <h3 class="text-xl font-bold mb-3">Digital Marketing</h3>
+            <p class="text-gray-300">Campaigns that boost visibility and drive sales.</p>
+        </div>
+
+        <div class="glass p-8 rounded-3xl cursor-pointer hover:scale-105 duration-300"
+            data-aos="fade-up" data-aos-delay="150" data-service="seo">
+            <h3 class="text-xl font-bold mb-3">SEO Optimization</h3>
+            <p class="text-gray-300">Rank higher, gain organic traffic, dominate search results.</p>
+        </div>
+
+        <div class="glass p-8 rounded-3xl cursor-pointer hover:scale-105 duration-300"
+            data-aos="fade-up" data-aos-delay="300" data-service="automation">
+            <h3 class="text-xl font-bold mb-3">IT Consulting & Automation</h3>
+            <p class="text-gray-300">Smart systems that simplify work and boost profit.</p>
+        </div>
+
+    </section>
+
+    <!-- MODAL OVERLAY -->
+    <div id="modalOverlay"
+        class="modal fixed inset-0 bg-black bg-opacity-70 flex items-center justify-center p-6 z-50">
+
+        <div class="glass p-10 rounded-3xl max-w-2xl w-full relative">
+            <button id="closeModal"
+                class="absolute top-3 right-3 text-white text-2xl font-bold hover:text-blue-400">×</button>
+
+            <h2 id="modalTitle" class="text-3xl font-bold mb-5"></h2>
+            <p id="modalContent" class="text-gray-300 text-lg leading-relaxed"></p>
+        </div>
+    </div>
+
+    <!-- FOOTER -->
+    <footer class="py-6 text-center text-gray-400 border-t border-gray-700">
+        © 2025 BigFat Tech Solution — Your Vision, Engineered to Perfection.
+    </footer>
+
+    <!-- AOS Script -->
+    <script src="https://unpkg.com/aos@2.3.1/dist/aos.js"></script>
+    <script>AOS.init();</script>
+
+    <!-- MODAL SCRIPT -->
+    <script>
+        const modalOverlay = document.getElementById("modalOverlay");
+        const modalTitle = document.getElementById("modalTitle");
+        const modalContent = document.getElementById("modalContent");
+        const closeModal = document.getElementById("closeModal");
+
+        const serviceData = {
+            "web-dev": {
+                title: "Web Development",
+                content: `
+                We build high-speed, modern, global-standard websites using the latest
+                frameworks, animations, and clean UI.
+
+                <br><br>
+                <strong>How We Handle It:</strong>
+                • Research your brand and goals  
+                • Create premium UI/UX  
+                • Develop with clean, scalable code  
+                • Speed optimization + SEO setup  
+                • Mobile-first responsive design  
+                • Continuous support & updates  
+                `
+            },
+            "branding": {
+                title: "Brand Identity & UI/UX",
+                content: `
+                We craft luxury-standard visuals, brand identity systems, and user interfaces
+                that elevate your business.
+
+                <br><br>
+                <strong>How We Handle It:</strong>
+                • Brand research  
+                • Logo, color system, typography  
+                • UI/UX wireframes  
+                • High-end design mockups  
+                • Consistent branding for social + web  
+                `
+            },
+            
+        
+            "marketing": {
+                title: "Digital Marketing",
+                content: `
+                We create marketing strategies that grow your brand and turn attention into revenue.
+
+                <br><br>
+                <strong>How We Handle It:</strong>
+                • Social media growth  
+                • Paid advertising  
+                • Brand storytelling  
+                • Conversion optimization  
+                • Analytics tracking  
+                `
+            },
+            "seo": {
+                title: "SEO Optimization",
+                content: `
+                Boost your visibility, rank higher, and attract organic customers.
+
+                <br><br>
+                <strong>How We Handle It:</strong>
+                • Keyword research  
+                • On-page optimization  
+                • Technical SEO  
+                • Content optimization  
+                • Speed performance tuning  
+                • Google Search Console setup  
+                `
+            },
+            "automation": {
+                title: "IT Consulting & Automation",
+                content: `
+                Transform your business using smart digital systems and automated workflows.
+
+                <br><br>
+                <strong>How We Handle It:</strong>
+                • System audit  
+                • Automation mapping  
+                • API integration  
+                • Business workflow optimization  
+                • Tech recommendations  
+                `
+            }
+        };
+
+        document.querySelectorAll("[data-service]").forEach(card => {
+            card.addEventListener("click", () => {
+                const key = card.getAttribute("data-service");
+                modalTitle.innerHTML = serviceData[key].title;
+                modalContent.innerHTML = serviceData[key].content;
+                modalOverlay.style.display = "flex";
+            });
+        });
+
+        closeModal.addEventListener("click", () => {
+            modalOverlay.style.display = "none";
+        });
+    </script>
+
+</body>
+</html>
