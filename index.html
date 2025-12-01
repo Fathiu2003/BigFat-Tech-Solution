@@ -226,44 +226,40 @@
     </div>
 
     <!-- SCRIPTS -->
-    <script src="https://unpkg.com/aos@2.3.1/dist/aos.js"></script>
-    <script>
-        AOS.init();
+   <script>
+const heroText = document.getElementById('hero-text');
+const phrases = ["Building Digital Empires", "Designing Brands", "Launching Businesses"];
+let current = 0; // Current phrase
+let index = 0;   // Current character
+let isDeleting = false;
+const typingSpeed = 120;  // typing speed in ms
+const deletingSpeed = 60; // deleting speed in ms
+const pauseAfterTyping = 1500; // pause after phrase is typed
 
-        // Typewriter Hero Text
-        const heroText = document.getElementById('hero-text');
-        const phrases = ["Building Digital Empires", "Designing Brands", "Launching Businesses"];
-        let current = 0, index = 0, isDeleting = false;
+function type() {
+    const currentPhrase = phrases[current];
 
-        function type() {
-            let currentPhrase = phrases[current];
-            if (isDeleting) {
-                heroText.textContent = currentPhrase.substring(0, index--);
-            } else {
-                heroText.textContent = currentPhrase.substring(0, index++);
-            }
-
-            if (!isDeleting && index === currentPhrase.length) {
-                isDeleting = true;
-                setTimeout(type, 1500);
-            } else if (isDeleting && index === 0) {
-                isDeleting = false;
-                current = (current + 1) % phrases.length;
-            }
-            setTimeout(type, isDeleting ? 50 : 100);
+    if (isDeleting) {
+        heroText.textContent = currentPhrase.substring(0, index--);
+        if (index < 0) {
+            isDeleting = false;
+            current = (current + 1) % phrases.length;
         }
-        type();
-
-        function openServiceModal(title, content) {
-            document.getElementById('serviceTitle').innerText = title;
-            document.getElementById('serviceContent').innerText = content;
-            document.getElementById('serviceModal').classList.remove('hidden');
+    } else {
+        heroText.textContent = currentPhrase.substring(0, index++);
+        if (index > currentPhrase.length) {
+            isDeleting = true;
+            setTimeout(type, pauseAfterTyping);
+            return; // pause before deleting
         }
+    }
 
-        function closeServiceModal() {
-            document.getElementById('serviceModal').classList.add('hidden');
-        }
-    </script>
+    setTimeout(type, isDeleting ? deletingSpeed : typingSpeed);
+}
+
+// Start typing
+type();
+</script>
 </body>
 
 </html>
