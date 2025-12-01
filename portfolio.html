@@ -1,0 +1,221 @@
+<!DOCTYPE html>
+<html lang="en">
+
+<head>
+    <meta charset="UTF-8">
+    <meta name="viewport" content="width=device-width, initial-scale=1.0">
+    <title>Portfolio — BigFat Tech Solution</title>
+
+    <!-- Tailwind CDN -->
+    <script src="https://cdn.tailwindcss.com"></script>
+
+    <!-- AOS Animation -->
+    <link href="https://unpkg.com/aos@2.3.1/dist/aos.css" rel="stylesheet">
+
+    <style>
+        body {
+            background: #0e0e10;
+            color: #fff;
+        }
+
+        .glass {
+            backdrop-filter: blur(15px);
+            background: rgba(255, 255, 255, 0.1);
+            border: 1px solid rgba(255, 255, 255, 0.15);
+        }
+
+        .gradient-text {
+            background: linear-gradient(90deg, #00eaff, #0077ff);
+            -webkit-background-clip: text;
+            -webkit-text-fill-color: transparent;
+        }
+
+        .modal {
+            display: none;
+        }
+
+        a:hover {
+            text-decoration: underline;
+        }
+    </style>
+</head>
+
+<body>
+
+    <!-- NAVBAR -->
+    <header class="fixed top-0 left-0 w-full glass z-50">
+        <div class="max-w-7xl mx-auto flex justify-between items-center py-4 px-6">
+            <h1 class="text-2xl font-bold gradient-text">BigFat Tech Solution</h1>
+            <nav class="space-x-8 text-gray-300 text-sm hidden md:block">
+                <a href="index.html" class="hover:text-white">Home</a>
+                <a href="about.html" class="hover:text-white">About</a>
+                <a href="services.html" class="hover:text-white">Services</a>
+                <a href="portfolio.html" class="hover:text-white">Portfolio</a>
+                <a href="contact.html" class="hover:text-white">Contact</a>
+            </nav>
+        </div>
+    </header>
+
+    <!-- HERO -->
+    <section class="pt-40 pb-16 text-center px-6">
+        <h1 class="text-5xl md:text-6xl font-extrabold gradient-text" data-aos="fade-up">
+            Our Work Speaks Louder Than Words
+        </h1>
+        <p class="mt-6 text-gray-300 max-w-3xl mx-auto text-lg" data-aos="fade-up" data-aos-delay="200">
+            A curated list of projects showcasing skill, creativity, and professional execution.
+        </p>
+    </section>
+
+    <!-- PORTFOLIO CARDS -->
+    <section class="max-w-7xl mx-auto px-6 pb-20 grid md:grid-cols-2 gap-8">
+
+        <!-- Project Card Template -->
+        <div class="glass p-6 rounded-3xl cursor-pointer hover:scale-105 duration-300" data-aos="fade-up" data-project="tic-tac-toe">
+            <h3 class="text-2xl font-bold mb-2">TIC-TAC-TOE Game</h3>
+            <p class="text-gray-300 mb-4">A classic Tic-Tac-Toe game — clean, responsive, and playable on any device.</p>
+            <p class="text-gray-400 mb-4"><strong>Tech Used:</strong> HTML • CSS • JavaScript</p>
+            <div class="flex gap-4">
+                <a href="https://fathiu2003.github.io/TIC-TAC-TOE/" target="_blank"
+                    class="px-4 py-2 bg-blue-600 rounded-lg hover:bg-blue-700 transition">View Live</a>
+                <a href="https://github.com/Fathiu2003/TIC-TAC-TOE.git" target="_blank"
+                    class="px-4 py-2 bg-gray-700 rounded-lg hover:bg-gray-600 transition">GitHub Repo</a>
+            </div>
+        </div>
+
+        <div class="glass p-6 rounded-3xl cursor-pointer hover:scale-105 duration-300" data-aos="fade-up" data-aos-delay="150" data-project="combo-palette">
+            <h3 class="text-2xl font-bold mb-2">Combo Palette</h3>
+            <p class="text-gray-300 mb-4">A clean utility for generating and previewing color palettes — ideal for designers.</p>
+            <p class="text-gray-400 mb-4"><strong>Tech Used:</strong> HTML • CSS • JavaScript</p>
+            <div class="flex gap-4">
+                <a href="https://fathiu2003.github.io/Combo-palette/" target="_blank"
+                    class="px-4 py-2 bg-blue-600 rounded-lg hover:bg-blue-700 transition">View Live</a>
+                <a href="https://github.com/Fathiu2003/Combo-palette.git" target="_blank"
+                    class="px-4 py-2 bg-gray-700 rounded-lg hover:bg-gray-600 transition">GitHub Repo</a>
+            </div>
+        </div>
+
+        <div class="glass p-6 rounded-3xl cursor-pointer hover:scale-105 duration-300" data-aos="fade-up" data-aos-delay="300" data-project="password-checker">
+            <h3 class="text-2xl font-bold mb-2">Password Checker</h3>
+            <p class="text-gray-300 mb-4">A simple tool to test password strength — practical for devs & security-minded users.</p>
+            <p class="text-gray-400 mb-4"><strong>Tech Used:</strong> HTML • CSS • JavaScript</p>
+            <div class="flex gap-4">
+                <a href="https://fathiu2003.github.io/Password-checker/" target="_blank"
+                    class="px-4 py-2 bg-blue-600 rounded-lg hover:bg-blue-700 transition">View Live</a>
+                <a href="https://github.com/Fathiu2003/Password-checker.git" target="_blank"
+                    class="px-4 py-2 bg-gray-700 rounded-lg hover:bg-gray-600 transition">GitHub Repo</a>
+            </div>
+        </div>
+
+        <div class="glass p-6 rounded-3xl cursor-pointer hover:scale-105 duration-300" data-aos="fade-up" data-aos-delay="450" data-project="fintech-ui">
+            <h3 class="text-2xl font-bold mb-2">Fintech Homepage UI</h3>
+            <p class="text-gray-300 mb-4">A sleek, professional UI mock-up for a Fintech startup — modern design, ready for integration.</p>
+            <p class="text-gray-400 mb-4"><strong>Tech Used:</strong> HTML • CSS • JavaScript</p>
+            <div class="flex gap-4">
+                <a href="https://fathiu2003.github.io/Fintech-homepage-UI/" target="_blank"
+                    class="px-4 py-2 bg-blue-600 rounded-lg hover:bg-blue-700 transition">View Live</a>
+                <a href="https://github.com/Fathiu2003/Fintech-homepage-UI.git" target="_blank"
+                    class="px-4 py-2 bg-gray-700 rounded-lg hover:bg-gray-600 transition">GitHub Repo</a>
+            </div>
+        </div>
+
+        <div class="glass p-6 rounded-3xl cursor-pointer hover:scale-105 duration-300" data-aos="fade-up" data-aos-delay="600" data-project="e-commerce">
+            <h3 class="text-2xl font-bold mb-2">E-commerce Mock</h3>
+            <p class="text-gray-300 mb-4">A mock e-commerce front-end showcasing product layout and styling — great for demos.</p>
+            <p class="text-gray-400 mb-4"><strong>Tech Used:</strong> HTML • CSS • JavaScript</p>
+            <div class="flex gap-4">
+                <a href="https://fathiu2003.github.io/e-commerce-mock/" target="_blank"
+                    class="px-4 py-2 bg-blue-600 rounded-lg hover:bg-blue-700 transition">View Live</a>
+                <a href="https://github.com/Fathiu2003/e-commerce-mock.git" target="_blank"
+                    class="px-4 py-2 bg-gray-700 rounded-lg hover:bg-gray-600 transition">GitHub Repo</a>
+            </div>
+        </div>
+
+    </section>
+
+    <!-- MODAL -->
+    <div id="modalOverlay" class="modal fixed inset-0 bg-black bg-opacity-70 flex items-center justify-center p-6 z-50">
+        <div class="glass p-10 rounded-3xl max-w-2xl w-full relative">
+            <button id="closeModal"
+                class="absolute top-3 right-3 text-white text-2xl font-bold hover:text-blue-400">×</button>
+            <h2 id="modalTitle" class="text-3xl font-bold mb-5"></h2>
+            <p id="modalContent" class="text-gray-300 text-lg leading-relaxed"></p>
+        </div>
+    </div>
+
+    <!-- FOOTER -->
+    <footer class="py-6 text-center text-gray-400 border-t border-gray-700">
+        © 2025 BigFat Tech Solution — Excellence in Every Pixel.
+    </footer>
+
+    <!-- AOS Script -->
+    <script src="https://unpkg.com/aos@2.3.1/dist/aos.js"></script>
+    <script>
+        AOS.init();
+    </script>
+
+    <!-- MODAL SCRIPT -->
+    <script>
+        const modalOverlay = document.getElementById("modalOverlay");
+        const modalTitle = document.getElementById("modalTitle");
+        const modalContent = document.getElementById("modalContent");
+        const closeModal = document.getElementById("closeModal");
+
+        const projectData = {
+            "tic-tac-toe": {
+                title: "TIC-TAC-TOE Game",
+                content: `
+                <strong>Overview:</strong> Classic Tic-Tac-Toe game — clean, responsive, playable on any device.<br><br>
+                <strong>Approach:</strong> Built with HTML, CSS, JS, focus on responsive layout and interactive logic.<br><br>
+                <strong>Result:</strong> Fully functional, cross-device compatible, lightweight and fast.<br><br>
+                <strong>Tech Stack:</strong> HTML • CSS • JavaScript`
+            },
+            "combo-palette": {
+                title: "Combo Palette",
+                content: `
+                <strong>Overview:</strong> Color palette generator for designers.<br><br>
+                <strong>Approach:</strong> Built with JS logic for color generation and preview; clean minimalist UI.<br><br>
+                <strong>Result:</strong> Easy-to-use, intuitive tool for designers.<br><br>
+                <strong>Tech Stack:</strong> HTML • CSS • JavaScript`
+            },
+            "password-checker": {
+                title: "Password Checker",
+                content: `
+                <strong>Overview:</strong> Password strength checker tool.<br><br>
+                <strong>Approach:</strong> Real-time validation with JS; simple UI/UX.<br><br>
+                <strong>Result:</strong> Works cross-browser, lightweight, easy for developers.<br><br>
+                <strong>Tech Stack:</strong> HTML • CSS • JavaScript`
+            },
+            "fintech-ui": {
+                title: "Fintech Homepage UI",
+                content: `
+                <strong>Overview:</strong> Sleek UI mockup for a fintech startup.<br><br>
+                <strong>Approach:</strong> Designed modern layout, responsive design, consistent color scheme.<br><br>
+                <strong>Result:</strong> Professional and ready for integration.<br><br>
+                <strong>Tech Stack:</strong> HTML • CSS • JavaScript`
+            },
+            "e-commerce": {
+                title: "E-commerce Mock",
+                content: `
+                <strong>Overview:</strong> Front-end mockup for an e-commerce site.<br><br>
+                <strong>Approach:</strong> Organized product layout, responsive design, interactive hover effects.<br><br>
+                <strong>Result:</strong> Functional demo, ready to expand into full site.<br><br>
+                <strong>Tech Stack:</strong> HTML • CSS • JavaScript`
+            }
+        };
+
+        document.querySelectorAll("[data-project]").forEach(card => {
+            card.addEventListener("click", () => {
+                const key = card.getAttribute("data-project");
+                modalTitle.innerHTML = projectData[key].title;
+                modalContent.innerHTML = projectData[key].content;
+                modalOverlay.style.display = "flex";
+            });
+        });
+
+        closeModal.addEventListener("click", () => {
+            modalOverlay.style.display = "none";
+        });
+    </script>
+
+</body>
+  </html>
