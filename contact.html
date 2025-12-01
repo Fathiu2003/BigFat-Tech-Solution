@@ -1,0 +1,159 @@
+<!DOCTYPE html>
+<html lang="en">
+
+<head>
+    <meta charset="UTF-8">
+    <meta name="viewport" content="width=device-width, initial-scale=1.0">
+    <title>Contact — BigFat Tech Solution</title>
+
+    <!-- Tailwind CDN -->
+    <script src="https://cdn.tailwindcss.com"></script>
+
+    <style>
+        body {
+            background: #0e0e10;
+            color: #fff;
+        }
+
+        .glass {
+            backdrop-filter: blur(15px);
+            background: rgba(255, 255, 255, 0.1);
+            border: 1px solid rgba(255, 255, 255, 0.15);
+        }
+
+        .gradient-text {
+            background: linear-gradient(90deg, #00eaff, #0077ff);
+            -webkit-background-clip: text;
+            -webkit-text-fill-color: transparent;
+        }
+
+        input, select, textarea {
+            background: rgba(255, 255, 255, 0.05);
+            color: #fff;
+            border: 1px solid rgba(255, 255, 255, 0.2);
+        }
+
+        input:focus, select:focus, textarea:focus {
+            outline: none;
+            border-color: #00eaff;
+        }
+
+        button:hover {
+            background-color: #0077ff;
+        }
+    </style>
+</head>
+
+<body>
+
+    <!-- NAVBAR -->
+    <header class="fixed top-0 left-0 w-full glass z-50">
+        <div class="max-w-7xl mx-auto flex justify-between items-center py-4 px-6">
+            <h1 class="text-2xl font-bold gradient-text">BigFat Tech Solution</h1>
+            <nav class="space-x-8 text-gray-300 text-sm hidden md:block">
+                <a href="index.html" class="hover:text-white">Home</a>
+                <a href="about.html" class="hover:text-white">About</a>
+                <a href="services.html" class="hover:text-white">Services</a>
+                <a href="portfolio.html" class="hover:text-white">Portfolio</a>
+                <a href="contact.html" class="hover:text-white">Contact</a>
+            </nav>
+        </div>
+    </header>
+
+    <!-- HERO -->
+    <section class="pt-40 pb-10 text-center px-6">
+        <h1 class="text-5xl md:text-6xl font-extrabold gradient-text">Get In Touch</h1>
+        <p class="mt-6 text-gray-300 max-w-3xl mx-auto text-lg">
+            Have a project in mind or want to collaborate? Send us a message and we’ll get back to you ASAP.
+        </p>
+    </section>
+
+    <!-- CONTACT FORM -->
+    <section class="max-w-3xl mx-auto px-6">
+        <form id="contactForm" class="glass p-10 rounded-3xl space-y-6">
+
+            <div>
+                <label for="name" class="block mb-2">Full Name</label>
+                <input type="text" id="name" required class="w-full p-3 rounded-lg">
+            </div>
+
+            <div>
+                <label for="email" class="block mb-2">Email</label>
+                <input type="email" id="email" required class="w-full p-3 rounded-lg">
+            </div>
+
+            <div>
+                <label for="whatsapp" class="block mb-2">WhatsApp Number</label>
+                <input type="text" id="whatsapp" placeholder="+234..." class="w-full p-3 rounded-lg">
+            </div>
+
+            <div>
+                <label for="service" class="block mb-2">Service You Want</label>
+                <select id="service" required class="w-full p-3 rounded-lg">
+                    <option value="">Select a Service</option>
+                    <option>Web Development</option>
+                    <option>Brand Identity & UI/UX</option>
+                    <option>Mobile App Development</option>
+                    <option>Digital Marketing</option>
+                    <option>SEO & Content Optimization</option>
+                    <option>IT Consulting & Business Automation</option>
+                    <option>E-commerce Solutions</option>
+                </select>
+            </div>
+
+            <div>
+                <label for="message" class="block mb-2">Message</label>
+                <textarea id="message" rows="5" required class="w-full p-3 rounded-lg"></textarea>
+            </div>
+
+            <button type="submit" class="w-full p-4 bg-blue-600 rounded-lg font-bold transition">Send Message</button>
+        </form>
+    </section>
+
+    <!-- FOOTER -->
+    <footer class="py-6 text-center text-gray-400 border-t border-gray-700 mt-10">
+        © 2025 BigFat Tech Solution — Your Vision, Engineered to Perfection.
+    </footer>
+
+    <!-- FORM SCRIPT -->
+    <script>
+        const contactForm = document.getElementById('contactForm');
+
+        contactForm.addEventListener('submit', function (e) {
+            e.preventDefault();
+
+            const name = document.getElementById('name').value;
+            const email = document.getElementById('email').value;
+            const whatsapp = document.getElementById('whatsapp').value;
+            const service = document.getElementById('service').value;
+            const message = document.getElementById('message').value;
+
+            // Prepare WhatsApp message
+            const waNumber = '+2348120919155';
+            let waMessage = `Hi BigFat Tech Solution,%0A`;
+            waMessage += `Name: ${name}%0A`;
+            waMessage += `Email: ${email}%0A`;
+            if (whatsapp) waMessage += `WhatsApp: ${whatsapp}%0A`;
+            waMessage += `Service: ${service}%0A`;
+            waMessage += `Message: ${message}`;
+
+            const waURL = `https://wa.me/${waNumber}?text=${waMessage}`;
+
+            // Open WhatsApp in new tab
+            window.open(waURL, '_blank');
+
+            // Optional: Send email notification via mailto (opens user's email client)
+            const emailAddress = 'bigfattechsolution@gmail.com';
+            const emailSubject = `New Contact Form Submission - ${service}`;
+            const emailBody = `Name: ${name}%0AEmail: ${email}%0AWhatsApp: ${whatsapp}%0AService: ${service}%0AMessage: ${message}`;
+            window.location.href = `mailto:${emailAddress}?subject=${emailSubject}&body=${emailBody}`;
+
+            // Reset form
+            contactForm.reset();
+
+            alert('Your message has been prepared. Please send it via WhatsApp or your email client.');
+        });
+    </script>
+
+</body>
+</html>
