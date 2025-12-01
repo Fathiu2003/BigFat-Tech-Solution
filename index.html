@@ -1,13 +1,30 @@
 <!DOCTYPE html>
 <html lang="en">
+
 <head>
     <meta charset="UTF-8">
     <meta name="viewport" content="width=device-width, initial-scale=1.0">
     <title>BigFat Tech Solution — Premium Web Agency</title>
+    <meta name="description" content="BigFat Tech Solution: Premium web agency crafting elite websites, brand identities, digital marketing, and scalable digital solutions.">
+    <meta name="keywords" content="Web Development, Brand Identity, Digital Marketing, Portfolio, BigFat Tech Solution, Premium Web Agency">
+    <meta name="author" content="BigFat Tech Solution">
+    <link rel="canonical" href="https://bigfattechnology.com/">
+
+    <!-- Open Graph / Facebook -->
+    <meta property="og:title" content="BigFat Tech Solution — Premium Web Agency">
+    <meta property="og:description" content="Building Digital Empires, Designing Brands, Launching Businesses into Global Relevance.">
+    <meta property="og:type" content="website">
+    <meta property="og:url" content="https://bigfattechnology.com/">
+    <meta property="og:image" content="https://bigfattechnology.com/og-image.png">
+
+    <!-- Twitter Card -->
+    <meta name="twitter:card" content="summary_large_image">
+    <meta name="twitter:title" content="BigFat Tech Solution — Premium Web Agency">
+    <meta name="twitter:description" content="Building Digital Empires, Designing Brands, Launching Businesses into Global Relevance.">
+    <meta name="twitter:image" content="https://bigfattechnology.com/og-image.png">
 
     <!-- Tailwind CDN -->
     <script src="https://cdn.tailwindcss.com"></script>
-
     <!-- AOS Animation -->
     <link href="https://unpkg.com/aos@2.3.1/dist/aos.css" rel="stylesheet">
 
@@ -16,21 +33,63 @@
             background: #0e0e10;
             color: #fff;
         }
+
         .glass {
             backdrop-filter: blur(15px);
-            background: rgba(255,255,255,0.1);
-            border: 1px solid rgba(255,255,255,0.2);
+            background: rgba(255, 255, 255, 0.1);
+            border: 1px solid rgba(255, 255, 255, 0.2);
         }
+
         .gradient-text {
             background: linear-gradient(90deg, #00eaff, #0077ff);
             -webkit-background-clip: text;
             -webkit-text-fill-color: transparent;
         }
+
         .hero-bg {
             background: radial-gradient(circle at top, #1a1a1d, #000);
+            position: relative;
+            overflow: hidden;
+        }
+
+        .shape {
+            position: absolute;
+            border-radius: 50%;
+            opacity: 0.1;
+            animation: float 15s infinite linear;
+        }
+
+        .shape1 {
+            width: 200px;
+            height: 200px;
+            background: #00eaff;
+            top: -50px;
+            left: -50px;
+        }
+
+        .shape2 {
+            width: 150px;
+            height: 150px;
+            background: #0077ff;
+            bottom: -50px;
+            right: -50px;
+            animation-delay: 7s;
+        }
+
+        @keyframes float {
+            0% {
+                transform: translateY(0) translateX(0) rotate(0deg);
+            }
+
+            50% {
+                transform: translateY(-50px) translateX(50px) rotate(45deg);
+            }
+
+            100% {
+                transform: translateY(0) translateX(0) rotate(360deg);
+            }
         }
     </style>
-
 </head>
 
 <body class="font-sans">
@@ -39,7 +98,6 @@
     <header class="fixed top-0 left-0 w-full glass z-50">
         <div class="max-w-7xl mx-auto flex justify-between items-center py-4 px-6">
             <h1 class="text-2xl font-bold gradient-text">BigFat Tech Solution</h1>
-
             <nav class="space-x-8 text-gray-300 text-sm hidden md:block">
                 <a href="index.html" class="hover:text-white">Home</a>
                 <a href="about.html" class="hover:text-white">About</a>
@@ -51,64 +109,105 @@
     </header>
 
     <!-- HERO SECTION -->
-    <section class="hero-bg pt-40 pb-32 text-center px-6">
-        <h1 
-            class="text-5xl md:text-7xl font-extrabold gradient-text"
-            data-aos="fade-up"
-            data-aos-duration="1400"
-        >
-            Building Digital Empires
+    <section class="hero-bg pt-40 pb-32 text-center px-6 relative overflow-hidden">
+        <div class="shape shape1"></div>
+        <div class="shape shape2"></div>
+
+        <h1 class="text-5xl md:text-7xl font-extrabold gradient-text" data-aos="fade-up" data-aos-duration="1400">
+            <span id="hero-text"></span>
         </h1>
 
-        <p 
-            class="mt-6 text-gray-300 text-lg md:text-xl max-w-2xl mx-auto"
-            data-aos="fade-up"
-            data-aos-duration="1800"
-        >
-            Where innovation meets excellence. We design brands, build systems, and launch businesses into global relevance.
+        <p class="mt-6 text-gray-300 text-lg md:text-xl max-w-2xl mx-auto" data-aos="fade-up" data-aos-duration="1800">
+            Where innovation meets excellence. We design brands, build systems, and launch businesses into global
+            relevance.
         </p>
 
-        <a 
-            href="services.html"
+        <a href="services.html"
             class="mt-10 inline-block px-10 py-4 bg-blue-600 hover:bg-blue-700 rounded-full text-white text-lg font-semibold shadow-lg"
-            data-aos="fade-up"
-            data-aos-duration="2000"
-        >
-            Explore Services →
-        </a>
+            data-aos="fade-up" data-aos-duration="2000">Explore Services →</a>
     </section>
 
     <!-- SERVICES SECTION -->
     <section class="max-w-7xl mx-auto py-20 px-6">
-        <h2 
-            class="text-4xl font-bold text-center mb-16"
-            data-aos="fade-up"
-        >Our Elite Services</h2>
+        <h2 class="text-4xl font-bold text-center mb-16" data-aos="fade-up">Our Elite Services</h2>
 
         <div class="grid md:grid-cols-3 gap-10">
-
-            <div class="glass p-8 rounded-3xl" data-aos="zoom-in">
+            <div class="glass p-8 rounded-3xl cursor-pointer hover:scale-105 duration-300" data-aos="zoom-in"
+                onclick="openServiceModal('Web Development','High-performance, luxurious websites that look like they cost $20,000+. We focus on responsive design, speed, and brand impact.')">
                 <h3 class="text-2xl font-semibold mb-4">Web Development</h3>
-                <p class="text-gray-300">
-                    High-performance, luxurious websites that look like they cost $20,000+.
-                </p>
+                <p class="text-gray-300">High-performance, luxurious websites that look like they cost $20,000+.</p>
             </div>
 
-            <div class="glass p-8 rounded-3xl" data-aos="zoom-in" data-aos-delay="200">
+            <div class="glass p-8 rounded-3xl cursor-pointer hover:scale-105 duration-300" data-aos="zoom-in"
+                data-aos-delay="200"
+                onclick="openServiceModal('Brand Identity','We craft timeless brands that speak power, elegance, and authority. From logos to full brand guidelines.')">
                 <h3 class="text-2xl font-semibold mb-4">Brand Identity</h3>
-                <p class="text-gray-300">
-                    We craft timeless brands that speak power, elegance, and authority.
-                </p>
+                <p class="text-gray-300">We craft timeless brands that speak power, elegance, and authority.</p>
             </div>
 
-            <div class="glass p-8 rounded-3xl" data-aos="zoom-in" data-aos-delay="400">
+            <div class="glass p-8 rounded-3xl cursor-pointer hover:scale-105 duration-300" data-aos="zoom-in"
+                data-aos-delay="400"
+                onclick="openServiceModal('Digital Marketing','Strategies that dominate online spaces and convert attention to cash. SEO, social media, and paid campaigns optimized for ROI.')">
                 <h3 class="text-2xl font-semibold mb-4">Digital Marketing</h3>
-                <p class="text-gray-300">
-                    Strategies that dominate online spaces and convert attention to cash.
-                </p>
+                <p class="text-gray-300">Strategies that dominate online spaces and convert attention to cash.</p>
             </div>
-
         </div>
+    </section>
+
+    <!-- PORTFOLIO TEASER -->
+    <section class="max-w-7xl mx-auto py-20 px-6">
+        <h2 class="text-4xl font-bold text-center mb-12" data-aos="fade-up">Featured Projects</h2>
+        <div class="grid md:grid-cols-3 gap-8">
+            <a href="portfolio.html"
+                class="glass p-6 rounded-3xl hover:scale-105 duration-300 text-center block" data-aos="fade-up">
+                <h3 class="text-2xl font-semibold mb-2">TIC-TAC-TOE Game</h3>
+                <p class="text-gray-300">Minimal, responsive JS game showcasing logic & UI skills.</p>
+            </a>
+            <a href="portfolio.html"
+                class="glass p-6 rounded-3xl hover:scale-105 duration-300 text-center block" data-aos="fade-up"
+                data-aos-delay="150">
+                <h3 class="text-2xl font-semibold mb-2">Combo Palette</h3>
+                <p class="text-gray-300">Utility for generating color palettes — clean and designer-friendly.</p>
+            </a>
+            <a href="portfolio.html"
+                class="glass p-6 rounded-3xl hover:scale-105 duration-300 text-center block" data-aos="fade-up"
+                data-aos-delay="300">
+                <h3 class="text-2xl font-semibold mb-2">Fintech UI</h3>
+                <p class="text-gray-300">Modern UI mockup ready for real integration — sleek & professional.</p>
+            </a>
+        </div>
+        <div class="text-center mt-12">
+            <a href="portfolio.html"
+                class="inline-block px-10 py-4 bg-blue-600 hover:bg-blue-700 rounded-full text-white text-lg font-semibold shadow-lg"
+                data-aos="fade-up">View Full Portfolio →</a>
+        </div>
+    </section>
+
+    <!-- TESTIMONIALS -->
+    <section class="max-w-7xl mx-auto py-20 px-6">
+        <h2 class="text-4xl font-bold text-center mb-12" data-aos="fade-up">What Our Clients Say</h2>
+        <div class="grid md:grid-cols-3 gap-8">
+            <div class="glass p-6 rounded-3xl" data-aos="fade-up">
+                <p class="text-gray-300 mb-4">"BigFat Tech Solution transformed our website into a global-class platform — highly recommend."</p>
+                <p class="font-bold">— Jane D., Startup Founder</p>
+            </div>
+            <div class="glass p-6 rounded-3xl" data-aos="fade-up" data-aos-delay="150">
+                <p class="text-gray-300 mb-4">"Professional, fast, and creative. They turned our ideas into a digital empire."</p>
+                <p class="font-bold">— Michael S., CEO</p>
+            </div>
+            <div class="glass p-6 rounded-3xl" data-aos="fade-up" data-aos-delay="300">
+                <p class="text-gray-300 mb-4">"Excellence in every pixel. Truly premium web solutions."</p>
+                <p class="font-bold">— Lisa K., Marketing Director</p>
+            </div>
+        </div>
+    </section>
+
+    <!-- CTA FOOTER -->
+    <section class="text-center py-20 px-6 bg-gradient-to-r from-blue-700 to-blue-500">
+        <h2 class="text-4xl font-bold mb-6 gradient-text">Ready to Build Your Digital Empire?</h2>
+        <a href="contact.html"
+            class="inline-block px-12 py-4 bg-white text-blue-700 font-semibold rounded-full shadow-lg hover:bg-gray-200 transition">Work
+            with Us →</a>
     </section>
 
     <!-- FOOTER -->
@@ -116,9 +215,55 @@
         © 2025 BigFat Tech Solution — Crafted with Precision & Excellence.
     </footer>
 
-    <!-- AOS Script -->
-    <script src="https://unpkg.com/aos@2.3.1/dist/aos.js"></script>
-    <script>AOS.init();</script>
+    <!-- SERVICE MODAL -->
+    <div id="serviceModal" class="fixed inset-0 bg-black bg-opacity-70 flex items-center justify-center p-6 hidden z-50">
+        <div class="glass p-10 rounded-3xl max-w-2xl w-full relative">
+            <button onclick="closeServiceModal()"
+                class="absolute top-3 right-3 text-white text-2xl font-bold hover:text-blue-400">×</button>
+            <h2 id="serviceTitle" class="text-3xl font-bold mb-5"></h2>
+            <p id="serviceContent" class="text-gray-300 text-lg leading-relaxed"></p>
+        </div>
+    </div>
 
+    <!-- SCRIPTS -->
+    <script src="https://unpkg.com/aos@2.3.1/dist/aos.js"></script>
+    <script>
+        AOS.init();
+
+        // Typewriter Hero Text
+        const heroText = document.getElementById('hero-text');
+        const phrases = ["Building Digital Empires", "Designing Brands", "Launching Businesses"];
+        let current = 0, index = 0, isDeleting = false;
+
+        function type() {
+            let currentPhrase = phrases[current];
+            if (isDeleting) {
+                heroText.textContent = currentPhrase.substring(0, index--);
+            } else {
+                heroText.textContent = currentPhrase.substring(0, index++);
+            }
+
+            if (!isDeleting && index === currentPhrase.length) {
+                isDeleting = true;
+                setTimeout(type, 1500);
+            } else if (isDeleting && index === 0) {
+                isDeleting = false;
+                current = (current + 1) % phrases.length;
+            }
+            setTimeout(type, isDeleting ? 50 : 100);
+        }
+        type();
+
+        function openServiceModal(title, content) {
+            document.getElementById('serviceTitle').innerText = title;
+            document.getElementById('serviceContent').innerText = content;
+            document.getElementById('serviceModal').classList.remove('hidden');
+        }
+
+        function closeServiceModal() {
+            document.getElementById('serviceModal').classList.add('hidden');
+        }
+    </script>
 </body>
+
 </html>
