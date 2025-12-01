@@ -1,0 +1,171 @@
+<!DOCTYPE html>
+<html lang="en">
+<head>
+    <meta charset="UTF-8">
+    <meta name="viewport" content="width=device-width, initial-scale=1.0">
+    <title>About — BigFat Tech Solution</title>
+
+    <!-- Tailwind CDN -->
+    <script src="https://cdn.tailwindcss.com"></script>
+
+    <!-- AOS Animation -->
+    <link href="https://unpkg.com/aos@2.3.1/dist/aos.css" rel="stylesheet">
+
+    <style>
+        body {
+            background: #0e0e10;
+            color: #fff;
+        }
+        .glass {
+            backdrop-filter: blur(15px);
+            background: rgba(255,255,255,0.1);
+            border: 1px solid rgba(255,255,255,0.2);
+        }
+        .gradient-text {
+            background: linear-gradient(90deg, #00eaff, #0077ff);
+            -webkit-background-clip: text;
+            -webkit-text-fill-color: transparent;
+        }
+    </style>
+</head>
+
+<body>
+
+    <!-- NAVBAR -->
+    <header class="fixed top-0 left-0 w-full glass z-50">
+        <div class="max-w-7xl mx-auto flex justify-between items-center py-4 px-6">
+            <h1 class="text-2xl font-bold gradient-text">BigFat Tech Solution</h1>
+
+            <nav class="space-x-8 text-gray-300 text-sm hidden md:block">
+                <a href="index.html" class="hover:text-white">Home</a>
+                <a href="about.html" class="hover:text-white">About</a>
+                <a href="services.html" class="hover:text-white">Services</a>
+                <a href="portfolio.html" class="hover:text-white">Portfolio</a>
+                <a href="contact.html" class="hover:text-white">Contact</a>
+            </nav>
+        </div>
+    </header>
+
+    <!-- ABOUT HERO -->
+    <section class="pt-40 pb-24 text-center px-6">
+        <h1 
+            class="text-5xl md:text-6xl font-extrabold gradient-text"
+            data-aos="fade-up"
+        >
+            About BigFat Tech Solution
+        </h1>
+
+        <p 
+            class="mt-6 text-gray-300 text-lg max-w-3xl mx-auto"
+            data-aos="fade-up"
+            data-aos-delay="200"
+        >
+            We are not just a tech company — we are a digital powerhouse shaping the future of innovation, design, and technology across the globe.
+        </p>
+    </section>
+
+    <!-- COMPANY STORY -->
+    <section class="max-w-6xl mx-auto px-6 pb-20">
+        <div class="glass p-10 rounded-3xl" data-aos="fade-up">
+            <h2 class="text-3xl font-bold mb-6">Our Story</h2>
+            <p class="text-gray-300 leading-relaxed text-lg">
+                BigFat Tech Solution was founded with one mission — to elevate businesses with world-class digital experiences. 
+                From branding to high-end websites, we’ve consistently delivered premium solutions that help brands stand out in a crowded world.
+                <br><br>
+                Today, we operate with a bold vision:  
+                <span class="text-white font-semibold">to become one of the most influential tech agencies originating from Africa and serving the world.</span>
+            </p>
+        </div>
+    </section>
+
+    <!-- MISSION & VISION -->
+    <section class="max-w-6xl mx-auto grid md:grid-cols-2 gap-10 px-6 pb-20">
+        <div class="glass p-10 rounded-3xl" data-aos="zoom-in">
+            <h3 class="text-2xl font-bold mb-4">Our Mission</h3>
+            <p class="text-gray-300">
+                To build technology that empowers individuals, transforms businesses, and leaves a legacy of excellence.
+            </p>
+        </div>
+
+        <div class="glass p-10 rounded-3xl" data-aos="zoom-in" data-aos-delay="200">
+            <h3 class="text-2xl font-bold mb-4">Our Vision</h3>
+            <p class="text-gray-300">
+                To become the go-to tech agency for premium digital solutions trusted by global brands and forward-thinking entrepreneurs.
+            </p>
+        </div>
+    </section>
+
+    <!-- VALUES -->
+    <section class="max-w-6xl mx-auto px-6 pb-24">
+        <h2 
+            class="text-3xl font-bold text-center mb-12"
+            data-aos="fade-up"
+        >Core Values</h2>
+
+        <div class="grid md:grid-cols-3 gap-8">
+
+            <div class="glass p-8 rounded-3xl" data-aos="fade-up">
+                <h4 class="text-xl font-semibold mb-3">Excellence</h4>
+                <p class="text-gray-300">We don’t settle for average. We aim for world-class in everything we build.</p>
+            </div>
+
+            <div class="glass p-8 rounded-3xl" data-aos="fade-up" data-aos-delay="200">
+                <h4 class="text-xl font-semibold mb-3">Innovation</h4>
+                <p class="text-gray-300">We push boundaries and create solutions that redefine industries.</p>
+            </div>
+
+            <div class="glass p-8 rounded-3xl" data-aos="fade-up" data-aos-delay="400">
+                <h4 class="text-xl font-semibold mb-3">Integrity</h4>
+                <p class="text-gray-300">We build with transparency, honesty, and long-term trust.</p>
+            </div>
+
+        </div>
+    </section>
+
+    <!-- CEO SECTION -->
+    <section class="max-w-6xl mx-auto px-6 pb-24">
+        <h2 
+            class="text-3xl font-bold text-center mb-12"
+            data-aos="fade-up"
+        >
+            Meet the CEO
+        </h2>
+
+        <div 
+            class="glass p-10 rounded-3xl grid md:grid-cols-2 gap-10 items-center"
+            data-aos="fade-up"
+            data-aos-delay="200"
+        >
+            <!-- CEO IMAGE -->
+            <div class="flex justify-center">
+                <div class="w-64 h-64 rounded-full overflow-hidden border-2 border-blue-500 shadow-lg">
+                    <img src="assets/images/ceo.jpg" alt="CEO" class="w-full h-full object-cover">
+                </div>
+            </div>
+
+            <!-- CEO TEXT -->
+            <div>
+                <h3 class="text-3xl font-bold mb-4">Fathiu — Founder & CEO</h3>
+                <p class="text-gray-300 text-lg leading-relaxed">
+                    A visionary creative with a passion for building digital experiences that command attention.  
+                    Known for blending design, strategy, and technology, Fathiu leads BigFat Tech Solution with a 
+                    commitment to excellence, discipline, and global ambition.
+                    <br><br>
+                    His philosophy is simple:  
+                    <span class="text-white font-semibold">“Build it like the world is watching.”</span>
+                </p>
+            </div>
+        </div>
+    </section>
+
+    <!-- FOOTER -->
+    <footer class="py-6 text-center text-gray-400 border-t border-gray-700">
+        © 2025 BigFat Tech Solution — Excellence in Every Pixel.
+    </footer>
+
+    <!-- AOS Script -->
+    <script src="https://unpkg.com/aos@2.3.1/dist/aos.js"></script>
+    <script>AOS.init();</script>
+
+</body>
+  </html>
